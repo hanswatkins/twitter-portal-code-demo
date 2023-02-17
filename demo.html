@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Twitter Portal</title>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-			crossorigin="anonymous"
-		/>
-	</head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    .card::before {
-        content: '';
-        display: block;
-        width: 100%;
-        position: absolute;
-        top: calc(100% - 1px);
-        left: 0;
-        height: 1px;
-        background-color: black;
-        border-radius: 50%;
-        z-index: -1;
-        transform: rotateX(80deg);
-        -webkit-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
-        box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
-    }
-
-    span {
-        position: absolute;
-        left: 199px;
-        top: 160px;
-        font-size: 14px;
-    }
-</style>
 <body>
         <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
             <div class="row">
@@ -65,11 +20,6 @@
         </div>
 <script>
 
-/*
- * CharacterCounter
- * @param textareaEl = textarea html element
- * @param remainingEl = element that includes the remaining value, updates with each event fire (keyUp)
- */
 
 class CharacterCounter {
 	constructor(textareaEl, remainingEl) {
@@ -80,30 +30,20 @@ class CharacterCounter {
 		this.currCounter = this.element.value.length;
 		this.setEvents();
 	}
-
-	/* calculates the remaining characters
-	 * @param event = event triggered from event listener
-	 */
 	calc(event) {
 		this.remainingChars =  this.element.value.length - 240;
 		this.updateRemainingEl();
 	}
-
-	/* sets the events that will be attached on the element
-	 */
 	setEvents() {
 		this.element.addEventListener("keyup", (event) => this.calc(event));
 	}
-
-	/* updates the remainingEl markup with the current remaining char value
-	 */
 	updateRemainingEl() {
 		this.remainingEl.textContent = this.max - this.remainingChars;
 	}
 }
 
-var textarea = document.getElementsByName("character-counter")[0];
-var remaining = document.querySelector("span");
+let textarea = document.getElementsByName("character-counter")[0];
+let remaining = document.querySelector("span");
 characterCounter = new CharacterCounter(textarea, remaining);
 
     let textArea = document.querySelector('#tweet');
@@ -161,4 +101,3 @@ characterCounter = new CharacterCounter(textarea, remaining);
 </script>
 
 	</body>
-</html>
